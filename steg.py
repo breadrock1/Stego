@@ -1,5 +1,4 @@
-import argparse
-import sys
+import argparse, sys
 from PIL import Image, ImageDraw
 from random import randint
 from re import findall
@@ -41,15 +40,19 @@ def stega_decrypt():
 
 
 def args_parse():
-    parser = argparse.ArgumentParser(description="If you wanna encrypt your message to picture enter command without options or type '-d encrypt'"
-                     " else for decrypting message from picture enter command with option '-d decrypt'. Type '-h' for help and see more information")
+    parser = argparse.ArgumentParser(description="If you wanna encrypt your message to picture " +
+        "enter command without options or type '-d encrypt' else for decrypting message from " +
+        "picture enter command with option '-d decrypt'. Type '-h' for help and see more information")
     parser.add_argument("-d", "--decrypt", metavar="", type=str, default="encrypt", help="To decrypt your message from picture type '-d decrypt'")
     return parser
+def main():
+    arg = args_parse()
+    namespace = arg.parse_args(sys.argv[1:])
+    if namespace.decrypt == "decrypt":
+        print("your message: ",stega_decrypt())
+    else:
+        stega_encrypt()
+        print('DONE!!! \n Your message has been encrypted!!!')
 
-arg = args_parse()
-namespace = arg.parse_args(sys.argv[1:])
-if namespace.decrypt == "decrypt":
-    print("your message: ",stega_decrypt())
-else:
-    stega_encrypt()
-    print('DONE!!! \n Your message has been encrypted!!!')
+if __name__ == "__main__":
+    main(sys.argv[1:])
