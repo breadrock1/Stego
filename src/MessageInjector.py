@@ -1,11 +1,38 @@
-from logging import exception, info
 from random import randint
+from logging import exception
 from typing import IO, Any, AnyStr, List
 
 from PIL import Image, ImageDraw
 
 
 class MessageInjector(object):
+    """
+        This class provides ability to inject specified message to target stego-container
+        (picture). When procedure finish successful then created key-file which contains
+        coordinates data with stored message symbols.
+
+        Attributes
+        ----------
+        keys : List[AnyStr]
+            The list of keys to extract message from specified picture.
+        message : List[AnyStr]
+            The list of extracted symbols from stego-container (picture).
+
+        Methods
+        -------
+        _open_file(file_path: str) -> IO[Any]
+            Returns OI[Any] (file handler) by specified file path.
+        _load_image_pixels(self, image_file_path: str)
+            Returns object contains pixels (hex-bytes) of target picture.
+        _load_keys_file(self, key_file_path: str) -> List[AnyStr]
+            Returns List[AnyStr] of specified file which contains key.
+        _key_transform(key_string: str, index: int) -> Tuple[int, int]
+            Returns Tuple[int, int] of key coordinates to get stored symbol.
+        inject_message(self, image_path: str, keys_file_path: str, user_message: str) -> None
+            This method provides ability to inject specified message to target
+            stego-container (picture).
+    """
+
     def __init__(self):
         self.keys = list()
         self.message = list()

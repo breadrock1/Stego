@@ -1,10 +1,43 @@
 from re import findall
-from typing import IO, Any, AnyStr, List, Tuple
 from logging import exception
+from typing import (
+    IO,
+    Any,
+    AnyStr,
+    List,
+    Tuple
+)
+
 from PIL import Image
 
 
 class MessageExtractor(object):
+    """
+        This class provides ability to extract message from target stego-container
+        (picture) by specified key-file.
+
+        Attributes
+        ----------
+        keys : List[AnyStr]
+            The list of keys to extract message from specified picture.
+        message : List[AnyStr]
+            The list of extracted symbols from stego-container (picture).
+
+        Methods
+        -------
+        _open_file(file_path: str) -> IO[Any]
+            Returns OI[Any] (file handler) by specified file path.
+        _load_image_pixels(self, image_file_path: str)
+            Returns object contains pixels (hex-bytes) of target picture.
+        _load_keys_file(self, key_file_path: str) -> List[AnyStr]
+            Returns List[AnyStr] of specified file which contains key.
+        _key_transform(key_string: str, index: int) -> Tuple[int, int]
+            Returns Tuple[int, int] of key coordinates to get stored symbol.
+        extract_message(self, image_path: str, keys_file_path: str) -> AnyStr
+            This method provides ability to get stored message from specified
+            picture by key-file.
+    """
+
     def __init__(self):
         self.keys = list()
         self.message = list()
