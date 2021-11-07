@@ -16,7 +16,7 @@ The purpose of steganography is to conceal and deceive. It is a form of covert c
 To setting up environment to run this script use this bash command:
 
 ```bash
-pip install -r requirements.txt
+    pip install -r requirements.txt
 ```
 
 ## Usage
