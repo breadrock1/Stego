@@ -1,4 +1,4 @@
-# StegaProject
+# Stego Project
 
 ![GitHub](https://badgen.net/badge/icon/github?icon=github&label)
 ![version](https://img.shields.io/badge/version-1.1-blue)
