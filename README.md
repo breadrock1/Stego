@@ -1,10 +1,9 @@
 # Stego Project
 
 ![GitHub](https://badgen.net/badge/icon/github?icon=github&label)
-![version](https://img.shields.io/badge/version-1.1-blue)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-
-![Python](https://img.shields.io/badge/Python-FFD43B?style=for-the-badge&logo=python&logoColor=darkgreen)
+![GitHub version](https://img.shields.io/badge/version-v1.2.0-green?style=plastic&labelColor=dark)
+[![Building Project](https://github.com/breadrock1/Stego/actions/workflows/build-project-action.yml/badge.svg?branch=master)](https://github.com/breadrock1/Stego/actions/workflows/build-project-action.yml)
 
 ## What Is Steganography?
 Steganography is the practice of hiding a secret message inside of (or even on top of) something that is not secret. That something can be just about anything you want. These days, many examples of steganography involve embedding a secret piece of text inside of a picture. Or hiding a secret message or script inside of a Word or Excel document.
@@ -22,15 +21,19 @@ To setting up environment to run this script use this bash command:
 ## Usage
 
 ```bash
-Usage: ./stego.py MODE {inject | extract} -f <picture-file-path> -h help
+Usage: python3 stego.py { inject [options] | extract [options] } -f <picture-file-path>
+            
+            There are two modes to use this simple application:
+            
+            1. inject  - Allows to inject passed string message to stego-container. There are 
+                         following additional needed options: 
+                                -m <message-string> [-o <output-key-file-path>]
 
-  Mode details (Select one of those methods and '--help' to get more information about options):
-    1. inject   - This mode provides ability to inject specified by user message to specified picture; 
-                    -m <message-string> [-o <output-key-file-path>]
-    2. extract  - This mode provides ability to extract message from specified picture by specified key-file.
-                    -k <key-file-path>
+            2. extract - Allows to extract string message from stego-container. Just pass key 
+                         file path: -k <key-file-path>
 
-There's a small script that provides an ability to hide message text to the specified BMP format picture and extract it back by key.
+            For mode details for each other modes enter '--help'.
+
 ```
 
 ## License 
