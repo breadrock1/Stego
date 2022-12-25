@@ -21,6 +21,17 @@ class Decoder:
     """The list of extracted symbols from stego-container (picture)."""
 
     def _parse_key(self, key_string: str) -> Tuple[int, int]:
+        """
+           This method returns parsed private key elements as tuple.
+
+           Args:
+           key_string (str): The private key string value.
+
+           Returns:
+           Tuple[int, int]: The tuple of coordinates of injected symbol.
+
+           """
+
         key_digit = int(findall(r'\((\d+),', key_string)[0])
         data_digit = int(findall(r',\s(\d+)\)', key_string)[0])
         return key_digit, data_digit

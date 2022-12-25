@@ -1,8 +1,8 @@
 from pathlib import Path
 from typing import Any, IO
 
-from PIL import Image
 from enum import Enum
+from PIL import Image
 
 
 class FileMode(Enum):
@@ -40,7 +40,7 @@ def load_keys_file_handler(file_path: str, mode: FileMode) -> IO[Any]:
 
     """
 
-    return open(file=file_path, mode=mode.value)
+    return open(file=file_path, mode=mode.value, encoding='')
 
 
 def save_stego_container(image_draw, image_file: str) -> str:
