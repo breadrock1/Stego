@@ -22,7 +22,7 @@ To setting up environment to run this script use this bash command:
 ## Usage
 
 ```bash
-Usage: ./launch.py MODE {inject | extract} -f <picture-file-path> -h help
+Usage: ./stego.py MODE {inject | extract} -f <picture-file-path> -h help
 
   Mode details (Select one of those methods and '--help' to get more information about options):
     1. inject   - This mode provides ability to inject specified by user message to specified picture; 
