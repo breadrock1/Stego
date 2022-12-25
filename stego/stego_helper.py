@@ -1,6 +1,4 @@
 from pathlib import Path
-from random import randint
-from shutil import copyfile
 from typing import Any, IO
 
 from PIL import Image
