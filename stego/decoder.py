@@ -38,7 +38,7 @@ class Decoder:
 
         """
 
-        image_file = open_and_load_image(file_path=image_file_path, mode=FileMode.Read)
+        image_file = open_and_load_image(file_path=image_file_path)
         keys_file = load_keys_file_handler(file_path=keys_file_path, mode=FileMode.Read)
         keys_coordinates = [self._parse_key(key_value) for key_value in keys_file.readlines()]
         message = ''.join([

@@ -39,7 +39,7 @@ class Encoder:
         """
 
         keys_file = load_keys_file_handler(file_path=keys_file_path, mode=FileMode.Write)
-        image_file = open_and_load_image(file_path=image_file_path, mode=FileMode.Write)
+        image_file = open_and_load_image(file_path=image_file_path)
         image_draw = ImageDraw.Draw(image_file)
 
         width, height = image_file.size
